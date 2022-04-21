@@ -11,6 +11,7 @@ import { DashboardRenderedComponent } from './components/dash-board/dashboard-re
 import { LineChartComponent } from './components/regione/line-chart/line-chart.component';
 import { MapComponent } from './components/regione/map/map.component';
 import { RegionalListComponent } from './components/regione/regional-list/regional-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,12 +25,11 @@ import { RegionalListComponent } from './components/regione/regional-list/region
     LineChartComponent,
     MapComponent,
     RegionalListComponent,
- 
-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
