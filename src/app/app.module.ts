@@ -12,6 +12,7 @@ import { LineChartComponent } from './components/regione/line-chart/line-chart.c
 import { MapComponent } from './components/regione/map/map.component';
 import { RegionalListComponent } from './components/regione/regional-list/regional-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

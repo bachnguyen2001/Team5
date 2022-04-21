@@ -1,1 +1,21 @@
-<p>regione works!</p>
+
+  <div class="region">
+    <h4>Region Statistic</h4>
+    <div class="map-contain">
+      <app-map [data]="selectedReg"></app-map>
+      <select name="region" [(ngModel)]="selectedReg">
+        <option
+          [selected]="item.countryregion == 'Vietnam'"
+          *ngFor="let item of listRegion"
+          [value]="item.countrycode?.iso2"
+        >
+          {{ item.countryregion }}
+        </option>
+      </select>
+    </div>
+  
+  </div>
+
+  
+ 
+
