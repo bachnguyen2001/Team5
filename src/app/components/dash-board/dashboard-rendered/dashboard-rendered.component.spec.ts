@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RegionComponent } from './region.component';
+import { DashboardRenderedComponent } from './dashboard-rendered.component';
 
-describe('RegionComponent', () => {
-  let component: RegionComponent;
-  let fixture: ComponentFixture<RegionComponent>;
+describe('DashboardRenderedComponent', () => {
+  let component: DashboardRenderedComponent;
+  let fixture: ComponentFixture<DashboardRenderedComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RegionComponent ]
+      declarations: [ DashboardRenderedComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RegionComponent);
+    fixture = TestBed.createComponent(DashboardRenderedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
