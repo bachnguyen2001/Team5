@@ -1,0 +1,36 @@
+.reports{
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  margin-top: 60px;
+  text-align: center;
+  font-size: 0.8em;
+}
+.report{
+  width: 25%;
+
+}
+.reports div:nth-child(1),.reports div:nth-child(2),.reports div:nth-child(3){
+  border-right: 1px solid #fff;
+}
+
+@media screen and (max-width:425px) {
+  
+  .reports{
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  div .report{
+    width: 100%;
+    
+  }
+  .reports div:nth-child(1),.reports div:nth-child(2),.reports div:nth-child(3){
+    border-bottom: 1px solid #fff;
+  }
+  .reports div:nth-child(1),.reports div:nth-child(2),.reports div:nth-child(3){
+    border-right: 0;
+  }
+  
+
+}
