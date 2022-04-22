@@ -1,1 +1,19 @@
-<p>regional-list works!</p>
+
+<div class="reports">
+  <div class="report">
+    <b>{{ region[0]?.confirmed | number }}</b>
+    <p>TOTAL CONFIRMED</p>
+  </div>
+  <div class="report">
+    <b>{{ region[0]?.recovered | number }}</b>
+    <p>TOTAL RECOVERD</p>
+  </div>
+  <div class="report">
+    <b>{{ region[0]?.deaths | number }}</b>
+    <p>TOTAL DEATHS</p>
+  </div>
+  <div class="report">
+    <b>{{ region[0]?.fatal | number }}%</b>
+    <p>TOTAL FATALS</p>
+  </div>
+</div>
