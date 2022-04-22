@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.chart {
+  width: 100%;
+  background-color: rgb(231, 224, 224);
+  border-radius: 10px;
+}
+.contain {
+  background-color: #343a40;
+  border-radius: 10px;
+  width: 100%;
+  padding: 25px;
+  color: white;
+  
+}
+
+
+.select {
+  display: flex;
+  justify-content: center;
+}
+.select button {
+  border-radius: 15px;
+  border: none;
+  width: 80px;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+
+}
+.select button:nth-child(1) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 1px solid gray;
+}
+.select button:nth-child(2) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.active {
+  background-color: lightblue;
+}
+.typeChart{
+  display: flex;
+  justify-content: center;
+}
+p{  
+  color:black;
+  padding: 5px; 
+  border-radius: 10px;
+  
+  margin:20px 10px 0 10px;
+}
