@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { WorldwideServiceService } from 'src/app/services/worldwide-service.service';
 
 @Component({
   selector: 'app-worldwide',
@@ -8,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorldwideComponent implements OnInit {
 
-  constructor() { }
+  worldWideData:any
+  fatality:number=0
+  constructor(private service:WorldwideServiceService) { }
 
   ngOnInit(): void {
+    
+    this.service.getTotal().subscribe(data=>{
+      this.worldWideData=data
+      this.fatality=this.worldWideData.deaths/this.worldWideData.confirmed
+    })
   }
 
 }

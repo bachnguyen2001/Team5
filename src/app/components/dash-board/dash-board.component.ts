@@ -1,3 +1,4 @@
+import { RegionServicesService } from './../../services/region-services.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
