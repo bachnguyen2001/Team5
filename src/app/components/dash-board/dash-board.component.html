@@ -1,1 +1,38 @@
-<p>dash-board works!</p>
+<div class="select">
+  <a (click)="showConfirmed()" [ngClass]="{ active: label == 'confirmed' }"
+    >Confirmed</a
+  >
+  <a (click)="showRecovered()" [ngClass]="{ active: label == 'recovered' }"
+    >Recovered</a
+  >
+  <a (click)="showDeaths()" [ngClass]="{ active: label == 'deaths' }">
+    Deaths</a
+  >
+</div>
+<table>
+  <tr>
+    <th scope="col">TOP</th>
+    <th scope="col">COUNTRY</th>
+    <th scope="col">{{ label |uppercase}}</th>
+  </tr>
+  <tr *ngFor="let country of CountriesByPage; let i = index">
+    <td scope="row">{{country.top}}</td>
+    <td scope="row">
+      <img
+        src="https://www.countryflags.io/{{
+          country.countrycode?.iso2
+        }}/flat/32.png"
+        alt=""
+      />{{ country.countryregion }}
+    </td>
+    <td scope="row">{{ country[label] | number }}</td>
+  </tr>
+</table>
+
+<mat-paginator
+  [length]="top20Countries?.length"
+  [pageSize]="10"
+  (page)="onPageChange($event)"
+>
+</mat-paginator>
+
