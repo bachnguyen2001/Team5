@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+div{
+    background-color: #343A40;
+    color: white;
+    padding: 30px;
+}
+span{
+    border-radius: 50%;
+    background-color :rgb(184, 181, 181);
+    padding: 10px 15px;
+    color: #343a40;
+}
