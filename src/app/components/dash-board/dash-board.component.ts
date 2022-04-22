@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashBoardComponent implements OnInit {
 
-  constructor() { }
+  showOrHide=true
+  constructor(private regionSer: RegionServicesService) {}
 
   ngOnInit(): void {
+ 
+  }
+  toggleShow(){
+    this.showOrHide=!this.showOrHide
   }
 
 }
