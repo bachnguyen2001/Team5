@@ -1,1 +1,34 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.map-container {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.map-frame {
+  
+  height: 100%;
+  width: 100%;
+}
+
+#map {
+  height: 100%;
+}
+.popup {
+  text-align: center;
+  background-color: goldenrod;
+  color: green;
+}
+.leaflet-popup-content-wrapper {
+  background-color: goldenrod !important;
+  color: goldenrod !important;
+}
+
 
