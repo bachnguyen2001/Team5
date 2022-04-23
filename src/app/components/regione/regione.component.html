@@ -13,9 +13,15 @@
         </option>
       </select>
     </div>
-  
+    <div class="total">
+      <app-regional-list [data]="selectedReg"></app-regional-list>
+    </div>
   </div>
 
   
- 
+  <div class="more">
+    <app-line-chart class="linechart" [data]="selectedReg"></app-line-chart>
+
+    <app-dash-board class="dash-board"></app-dash-board>
+  </div>
 
