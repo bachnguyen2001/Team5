@@ -25,8 +25,6 @@ export class MapComponent implements OnInit {
     this.showMapByCountryCode(this.countrycode);
   }
 
-  //https://www.digitalocean.com/community/tutorials/angular-angular-and-leaflet
-
   initMap() {
     this.map = L.map('map');
   }
@@ -46,10 +44,11 @@ export class MapComponent implements OnInit {
     );
   }
   setMarkerPopUpforMap() {
+  
     var popup = L.popup({ offset: L.point(20, 30) })
       .setLatLng([
         this.country?.location.lat as number,
-        (this.country?.location.lng as number) - 1.5,
+        this.country?.location.lng as number-1.5,
       ])
       .setContent(
         `<div class="popup" style="
@@ -61,9 +60,9 @@ export class MapComponent implements OnInit {
   </div>`
       )
       .openOn(this.map);
-
-    for (let i = 0; i < this.service.allRegion?.length; i++) {
-      let radius = 50000;
+   
+  for(let i=0;i<this.service.allRegion?.length;i++){
+    let radius = 50000;
       if (this.service.allRegion[i]?.confirmed > 10000) {
         radius = 100000;
       }
@@ -71,17 +70,15 @@ export class MapComponent implements OnInit {
         radius = 150000;
       }
       L.circle(
-        {
-          lat: this.service.allRegion[i]?.location.lat as number,
-          lng: this.service.allRegion[i]?.location.lng as number,
-        },
+        { lat: this.service.allRegion[i]?.location.lat as number, lng: this.service.allRegion[i]?.location.lng as number },
         {
           radius: radius,
         }
       ).addTo(this.map);
-    }
   }
-  //https://github.com/CartoDB/basemap-styles
+
+  }
+
   setLayerforMap() {
     const tiles = L.tileLayer(
       'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
@@ -91,7 +88,6 @@ export class MapComponent implements OnInit {
     );
     tiles.addTo(this.map);
   }
-
   clearMap() {
     if (this.marker != null) {
       this.map.removeLayer(this.marker);

@@ -1,10 +1,16 @@
+import { RegioneComponent } from './components/regione/regione.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+
+const routes: Routes = [
+
+  {path:'dashboard',loadChildren:()=>import('./components/dash-board/dashboard.routing').then(mod=>mod.DashBoard)},
+  
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{preloadingStrategy:PreloadAllModules})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
