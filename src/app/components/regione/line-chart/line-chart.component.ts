@@ -111,7 +111,6 @@ export class LineChartComponent implements OnInit, OnChanges {
             position: 'bottom',
             labels: {
               color: 'black',
-              usePointStyle:false
             },
             
           },
@@ -130,9 +129,7 @@ export class LineChartComponent implements OnInit, OnChanges {
   select10days() {
     this.selectedAll = false;
     this.selected10days = true;
-    this.drawLineChartByData();
-    
-    
+    this.drawLineChartByData();    
   }
 
   
