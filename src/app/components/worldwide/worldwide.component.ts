@@ -10,14 +10,15 @@ import { WorldwideServiceService } from 'src/app/services/worldwide-service.serv
 export class WorldwideComponent implements OnInit {
 
   worldWideData:any
-  fatality:number=0
+  fatality!:number
   constructor(private service:WorldwideServiceService) { }
 
   ngOnInit(): void {
     
     this.service.getTotal().subscribe(data=>{
       this.worldWideData=data
-      this.fatality=this.worldWideData.deaths/this.worldWideData.confirmed
+      this.fatality=this.worldWideData.deaths/this.worldWideData.confirmed * 100
+      this.fatality = this.fatality
     })
   }
 
