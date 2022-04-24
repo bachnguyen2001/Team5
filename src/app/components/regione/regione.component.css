@@ -25,13 +25,13 @@ h4 {
 }
 select {
   position: absolute;
-  top: 95%;
-  left: 25%;
+  top: -12%;
+  left: 15%;
   text-align-last: center;
   padding: 10px;
   border-radius: 10px;
   z-index: 10000;
-  width: 50%;
+  width: 20%;
 }
 .more {
   display: flex;
