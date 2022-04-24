@@ -1,6 +1,9 @@
 .worldwide{
   color: white;
 }
+h2 {
+  color: gray;
+}
 
 .list{
   display: flex;
