@@ -1,17 +1,19 @@
 .reports{
   display: flex;
   justify-content: space-around;
-  color: white;
+  color: black;
   margin-top: 60px;
   text-align: center;
   font-size: 0.8em;
 }
 .report{
-  width: 25%;
-
+  width: 20%;
+  background-color: rgb(205, 211, 211);
 }
-.reports div:nth-child(1),.reports div:nth-child(2),.reports div:nth-child(3){
-  border-right: 1px solid #fff;
+.reports div:nth-child(1),.reports div:nth-child(2),.reports div:nth-child(3), .reports div:nth-child(4){
+  border: 1px solid #fff;
+  padding: 15px;
+
 }
 
 @media screen and (max-width:425px) {
