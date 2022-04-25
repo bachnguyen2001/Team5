@@ -19,6 +19,7 @@ import { DashboardRenderedComponent } from './components/dash-board/dashboard-re
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
+import { WeatherComponent } from './components/regione/weather/weather.component';
 
 export const  firebaseConfig = {
   apiKey: "AIzaSyDQdrwzlGvSm9hUQY_xUiD_kKs8sNiSLE8",
@@ -40,6 +41,7 @@ export const  firebaseConfig = {
     HeaderComponent,
     DashBoardComponent,
     DashboardRenderedComponent,
+    WeatherComponent,
     
   ],
   imports: [
