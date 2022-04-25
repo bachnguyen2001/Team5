@@ -45,21 +45,5 @@ export class ChartServiceService {
     return cases;
   }
 
-  get10DaysAgo(obj:any){
-   let date=this.getDate(obj)
-   let tendaysago=[]
-   for(let i=date.length-10;i<date.length;i++){
-     tendaysago.push(date[i])
-   }
-   return tendaysago;
-  }
 
-  getCase10DaysAgo(obj:any){
-    let allCases=this.getCases(obj);
-    let tendaysago=[]
-    for(let i=allCases.length-10;i<allCases.length;i++){
-      tendaysago.push(allCases[i])
-    }
-    return tendaysago;
-  }
 }

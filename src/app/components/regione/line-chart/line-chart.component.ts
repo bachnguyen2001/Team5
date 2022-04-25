@@ -12,8 +12,8 @@ export class LineChartComponent implements OnInit, OnChanges {
   @Input('data') countryCode = '';
   chart!: Chart;
   list: any;
-  selectedAll = true;
-  selected10days = false;
+
+  
   constructor(
     private chartService: ChartServiceService,
     private regService: RegionServicesService
@@ -27,6 +27,7 @@ export class LineChartComponent implements OnInit, OnChanges {
         this.list = param;
         this.drawLineChartByData();
       });
+      this.drawLineChartByData();
   }
   ngOnChanges() {
     this.chartService
@@ -46,15 +47,6 @@ export class LineChartComponent implements OnInit, OnChanges {
       this.chartService.sortObject(this.list[0].timeseries)
     );
 
-    if (!this.selectedAll) {
-      dates = this.chartService.get10DaysAgo(
-        this.chartService.sortObject(this.list[0].timeseries)
-      );
-      allCases = this.chartService.getCase10DaysAgo(
-        this.chartService.sortObject(this.list[0].timeseries)
-      );
-    }
- 
     let confirmedCases = this.regService.confirmedCase(allCases);
     let recoverCases = this.regService.recoverCase(allCases);
     let deathsCases = this.regService.deathCase(allCases);
@@ -121,17 +113,7 @@ export class LineChartComponent implements OnInit, OnChanges {
     });
   }
 
-  selectAll() {
-    this.selectedAll = true;
-    this.selected10days = false;
-    this.drawLineChartByData();
-  }
-  select10days() {
-    this.selectedAll = false;
-    this.selected10days = true;
-    this.drawLineChartByData();    
-  }
-
+  
   
   
 }
