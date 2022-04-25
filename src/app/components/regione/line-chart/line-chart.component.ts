@@ -12,7 +12,6 @@ export class LineChartComponent implements OnInit, OnChanges {
   @Input('data') countryCode = '';
   chart!: Chart;
   list: any;
-
   
   constructor(
     private chartService: ChartServiceService,
@@ -41,10 +40,10 @@ export class LineChartComponent implements OnInit, OnChanges {
   drawLineChartByData() {
     this.chart?.destroy();
     let dates = this.chartService.getDate(
-      this.chartService.sortObject(this.list[0].timeseries)
+      this.list[0].timeseries
     );
     let allCases = this.chartService.getCases(
-      this.chartService.sortObject(this.list[0].timeseries)
+      this.list[0].timeseries
     );
 
     let confirmedCases = this.regService.confirmedCase(allCases);
