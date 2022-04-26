@@ -12,11 +12,12 @@ export class RegioneComponent implements OnInit {
   listRegion!: any[];
   op: any;
   selectedReg = 'VN';
+  selected = ''
   constructor(private regionservice: RegionServicesService) {}
 
   ngOnInit(): void {
     this.getRegion();
-   
+    
   }
 
   getRegion() {
