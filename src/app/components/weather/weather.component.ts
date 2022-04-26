@@ -47,7 +47,7 @@ export class WeatherComponent implements OnInit {
                  console.log('template:' + this.temp)
                  console.log("humidity:" +this.humidity)
                  console.log("wind:" + this.wind)
-                 console.log("clound" + this.cloud)
+                 console.log("cloud:" + this.cloud)
                })
         });      
       });   
