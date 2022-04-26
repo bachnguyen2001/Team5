@@ -12,14 +12,12 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { MapComponent } from './components/regione/map/map.component';
 import { LineChartComponent } from './components/regione/line-chart/line-chart.component';
 import { HeaderComponent } from './components/header/header.component';
-import { DashBoardComponent } from './components/dash-board/dash-board.component';
-import { DashboardRenderedComponent } from './components/dash-board/dashboard-rendered/dashboard-rendered.component';
 //import { AngularFireModule } from '@angular/fire';
 //import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
-import { WeatherComponent } from './components/regione/weather/weather.component';
+import { WeatherComponent } from './components/weather/weather.component';
 
 export const  firebaseConfig = {
   apiKey: "AIzaSyDQdrwzlGvSm9hUQY_xUiD_kKs8sNiSLE8",
@@ -39,8 +37,6 @@ export const  firebaseConfig = {
     MapComponent, 
     LineChartComponent,
     HeaderComponent,
-    DashBoardComponent,
-    DashboardRenderedComponent,
     WeatherComponent,
     
   ],

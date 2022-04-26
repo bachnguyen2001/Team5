@@ -5,7 +5,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
 
-  {path:'dashboard',loadChildren:()=>import('./components/dash-board/dashboard.routing').then(mod=>mod.DashBoard)},
+  
   
 ];
 
