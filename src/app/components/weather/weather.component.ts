@@ -37,7 +37,7 @@ export class WeatherComponent implements OnInit {
                  });
                  console.log(res)
                  let temp = res.main.temp 
-                 this.temp = temp - 273.15
+                 this.temp =temp - 273.15
                  this.humidity = res.main.humidity
                  this.wind = res.wind
                  this.wind = res.wind.speed
@@ -53,7 +53,10 @@ export class WeatherComponent implements OnInit {
       });   
     })
 
-    
+    // const roundTo = function(num: number) {
+    //   const factor = 10 ** 2;
+    //   return Math.round(num * factor) / factor;
+    // };
     }
 
     ngOnChanges(): void {
