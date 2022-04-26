@@ -75,6 +75,7 @@ export class WeatherComponent implements OnInit {
                    this.humidity = res.main.humidity
                    this.wind = res.wind
                    this.wind = res.wind.speed
+                   this.cloud = res.clouds.all
                   
                  console.log(res.main.temp)
                  console.log('template:' + this.temp)
