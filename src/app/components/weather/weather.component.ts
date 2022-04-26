@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
@@ -7,72 +7,83 @@ import { WeatherService } from 'src/app/services/weather.service';
   styleUrls: ['./weather.component.css']
 })
 export class WeatherComponent implements OnInit {
-
+  @Input('data') regionName = '';
   weather:any
-  temp!:number
-  place!:any
+  temp!:any
   capital!:string
+  humidity!:number
+  wind!:number
+  cloud!:any
+  today: number = Date.now()
 
   constructor( private weatherService:WeatherService) { }
 
   ngOnInit(): void {
-     
+    console.log(this.regionName)
 
-    // this.weatherService.getLocation('London').subscribe((res:any) => {
-    //   this.place = res
-    //   console.log(res)
-    //   this.place.forEach((element:any) => {
-    //     this.lat = element.lat
-    //     console.log(this.lat)
-    //   });
-    // })
-
-    this.weatherService.getCapital("Vietnam").subscribe((res:any) => {
+    this.weatherService.getCapital(this.regionName).subscribe((res:any) => {
       //console.log(res)
       res.forEach((element:any) => {
-        //console.log(element.capital)
-        this.place = element.capital
-        let place:any = []
+        
+        let place:any = element.capital
         place.forEach((cap:any) => {
-          this.place = cap
-          console.log(this.place)
-          return this.place
-        });
-        return this.place
-      });
-      return this.place
+          this.capital = cap
+          console.log(cap)
+          this.weatherService.getWeather(`${this.capital}`).subscribe((res:any) => {
+                 let weatherInfo = res.weather
+                 weatherInfo.forEach((wea:any) => {
+                   this.weather = wea.main
+                   console.log(this.weather)
+                 });
+                 console.log(res)
+                 let temp = res.main.temp 
+                 this.temp = temp - 273.15
+                 this.humidity = res.main.humidity
+                 this.wind = res.wind
+                 this.wind = res.wind.speed
+                 this.cloud = res.clouds.all
+                 
+                 console.log(res.main.temp - 273.15)
+                 console.log('template:' + this.temp)
+                 console.log("humidity:" +this.humidity)
+                 console.log("wind:" + this.wind)
+                 console.log("clound" + this.cloud)
+               })
+        });      
+      });   
     })
-    //this.capital = this.place
-     console.log(this.place)
-  //   this.weatherService.getWeather(`${this.place}`).subscribe((res:any) => {
-  //     this.weather = res.weather
-  //     this.temp = res.main.temp
-  //     console.log(res)
-  //     console.log(this.weather)
-  //   })
+
+    
     }
 
     ngOnChanges(): void {
-      //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
-      //Add '${implements OnChanges}' to the class.
-      this.weatherService.getCapital("Vietnam").subscribe((res:any) => {
-        //console.log(res)
+      this.weatherService.getCapital(this.regionName).subscribe((res:any) => { 
         res.forEach((element:any) => {
-          //console.log(element.capital)
-          this.place = element.capital
-          let place:any = []
+
+          let place:any = element.capital
           place.forEach((cap:any) => {
-            this.place = cap
-            console.log(this.place)
-            return this.place
-          });
-          return this.place
-        });
-        return this.place
+            this.capital = cap
+            this.weatherService.getWeather(`${this.capital}`).subscribe((res:any) => {
+                   let weatherInfo = res.weather
+                   weatherInfo.forEach((wea:any) => {
+                     this.weather = wea.main
+                   });
+                   this.temp = res.main.temp - 273.15
+                   this.humidity = res.main.humidity
+                   this.wind = res.wind
+                   this.wind = res.wind.speed
+                  
+                 console.log(res.main.temp)
+                 console.log('template:' + this.temp)
+                 console.log("humidity:" +this.humidity)
+                 console.log("wind:" + this.wind)
+                 })
+          });      
+        });   
       })
-      //this.capital = this.place
-       console.log(this.place)
       
     }
+
+    
 
 }

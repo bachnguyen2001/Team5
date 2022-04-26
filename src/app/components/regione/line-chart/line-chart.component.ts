@@ -26,7 +26,7 @@ export class LineChartComponent implements OnInit, OnChanges {
         this.list = param;
         this.drawLineChartByData();
       });
-      this.drawLineChartByData();
+      
   }
   ngOnChanges() {
     this.chartService
