@@ -14,3 +14,8 @@ span{
     padding: 10px 15px;
     color: #151616;
 }
+small{
+    float: right;
+    color: black;
+    font-size: 30px;
+}
