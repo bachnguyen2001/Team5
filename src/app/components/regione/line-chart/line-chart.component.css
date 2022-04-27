@@ -8,13 +8,8 @@
   background-color: rgb(231, 224, 224);
   border-radius: 10px;
 }
-.contain {
-  background-color: #343a40;
-  border-radius: 10px;
-  width: 100%;
-  padding: 25px;
-  color: white;
-  
+h3{
+  font-size: 40px;
 }
 
 
